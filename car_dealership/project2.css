@@ -1,0 +1,220 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Pacifico', cursive; 
+    line-height: 1.5;
+}
+.container1{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 8%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+a{
+    text-decoration: none;
+}
+#logo a{
+    font-size: 25px;
+    font-weight: bold;
+    color: #222;
+
+}
+#nav a{
+    display: inline-block;/* Very important to project the animation in this nav elements without this those tranformations wont work upon them.*/
+    font-size: 15px;
+    color: #222;
+    margin: 0 20px;
+    transition: .3s;
+    animation: slidetop .5s linear forwards ;
+    animation-delay: calc(.2s* var(--i));
+    opacity: 0;
+}
+#nav a:hover,
+#nav a.active{
+    color: blue;
+}
+#social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center; 
+    margin: 0 5px;
+    background: transparent; 
+    border: 2px solid transparent;
+    font-size: 20px;
+    width: 40px; 
+    height: 40px;
+    transform: rotate(45deg);
+    transition: .3s;
+    animation: slidesocial .5s linear forwards;
+    animation-delay: calc(.2s* var(--i));
+    opacity: 0;
+}
+#social-media a:hover {
+    border-color: red;
+    width: 45px;
+    height: 45px;
+}
+
+#social-media a i{
+    transform: rotate(-45deg);
+}
+.twitter{
+    color: blue;
+}
+.insta{
+    color: red;
+}
+.fb{
+    color: darkblue;
+}
+#innerlogo{
+    color: blueviolet;
+    font-size: 30px;
+}
+.home{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 8% 0 8%;
+    overflow-x: hidden;
+    
+}
+.home-content{
+    max-width: 650px;
+}
+.home-content h1{
+    font-size: 35px;
+    animation: slidebottom .5s linear forwards;
+    animation-delay: 1s;
+    opacity: 0;
+}
+.home-content h3{
+    color: blue;
+    font-size: 25px;
+    animation: slideright .5s linear forwards;
+    animation-delay: 1.3s;
+    opacity: 0;
+}
+.home-content p{
+    font-size: 15px;
+    margin: 5px 0 5px;
+    font-weight: normal;
+    margin:15px 0;
+    animation: slideleft .5s linear forwards;
+    animation-delay: 1.6s;
+    opacity: 0;
+    
+}
+.home-content a{
+    color: white;
+    background-color: blue;
+    margin-top: 15px;
+    padding: 5px 15px;
+    border-radius: 10px;
+    transition: .5s;
+    border: 2px solid blue;
+    animation: slidetop 2s linear forwards;
+    animation-delay: 2s;
+    opacity: 0;
+}
+.home-content a:hover{
+    color: blue;
+    background: transparent;
+    font-weight: bold;
+}
+.home-img{
+    position: relative;  
+    width: 650px;
+    height: 550px;
+    transform: rotate(45deg);
+    right: -7%;
+}
+.rhombus{
+    position: absolute; 
+    width: 100%;
+    height: 100%;
+    background:white;
+    border: 25px solid blue;
+    box-shadow: 5px 5px 5px red;
+    animation: slideleft .5s linear forwards;
+    animation-delay: 2s;
+    opacity: 0;
+    
+}
+.home-img .rhombus img{
+    position: absolute;
+    top: 60px;
+    left: -50px;
+    max-width: 600px;
+    transform: rotate(-45deg);
+}
+#logo{
+    opacity: 0;
+    animation: slideright 1s linear forwards;
+}
+
+@keyframes slideright{
+    0%{
+        transform: translateX(-150px);
+        opacity: 0;
+      }
+    
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+        }
+    }
+    @keyframes slideleft{
+        0%{
+            transform: translateX(150px);
+            opacity: 0;
+          }
+        
+        100%{
+            transform: translateX(0px);
+            opacity: 1;
+            }
+        }
+
+
+    @keyframes slidetop{
+        0%{
+            transform: translateY(100px);
+            opacity: 0;
+        }
+        100%{
+            transform: translateY(0px);
+            opacity: 1;
+        }
+    }
+    @keyframes slidebottom{
+        0%{
+            transform: translateY(-100px);
+            opacity: 0;
+        }
+        100%{
+            transform: translateY(0px);
+            opacity: 1;
+        }
+    }
+    @keyframes slidesocial{
+        0%{
+            transform: translateX(100px) ;
+            opacity: 0;
+        }
+        100%{
+            transform: translateX(0px) rotate(45deg) ;
+            opacity: 1;
+        }
+    }
+
